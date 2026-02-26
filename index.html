@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Special TEA</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat";
+        }
+
+        body{
+            position: relative;
+        }
+
+        /* top menu */
+        nav{
+            /* border: 2px red solid; */
+            text-align: center;
+            width: 100%;
+        }
+
+        nav ul li{
+            display: inline-block;
+            padding: 10px;
+            font-size: 13px;
+            transition: 0.4s;
+        }
+
+        nav ul li:hover{
+            font-weight: bold;
+            background: rgb(184, 255, 184);
+        }
+
+        /* Main header */
+        .main-header{
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            padding-top: 15%;
+            background: linear-gradient(to bottom,rgb(0,0,0,0.9),rgb(0,0,0,0.2)),url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmBbtz_Dl4q8qRgZNyo7dg0IHFy9YOCJ9Jxg&s") center/cover;
+        }
+
+        .main-contents{
+            color: white;
+        }
+
+        .main-contents button{
+            width: 100px;
+            height: 30px;
+            background: linear-gradient(to left,rgb(0, 187, 90),rgb(0, 197, 232));
+            color: white;
+            font-weight: bold;
+            border-radius: 90px;
+            border: none;
+            margin: 7px;
+            transition: 0.4s;
+        }
+
+        .main-contents button:hover{
+            width: 120px;
+        }
+
+        /* Top menu icon */
+        .menu-icon{
+            border: 2px rgb(227, 37, 37) solid;
+            background: white;
+            font-size: 30px;
+            position: fixed;
+            border-radius: 7px;
+            top: 30px;
+            left: 20px;
+        }
+
+        /* Menu bên trái */
+        .left-menu{
+            border: 2px rgb(255, 208, 0) solid;
+            position: fixed;
+            background: rgb(255, 255, 255);
+            width: 50%;
+            height: 100vh;
+            display: none;
+        }
+
+        .left-menu ul{
+            list-style: none;
+        }
+
+        .left-menu i{
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+        }
+
+        .left-menu li{
+            padding: 10px;
+            font-weight: bold;
+            transition: 0.4s;
+        }
+
+        .left-menu li:hover{
+            transform: translateX(20px);
+            color: green;
+        }
+
+    /* Social / widget styles */
+    .container{max-width:1000px;margin:30px auto;padding:0 16px}
+    .social-bar{display:flex;gap:12px;align-items:center;margin:18px 0}
+    .social-bar button{padding:8px 12px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer}
+    .social-bar .like-btn.active{background:#ffdede;border-color:#ff8a8a}
+
+    /* Slideshow */
+    .slideshow{position:relative;overflow:hidden;border-radius:8px;border:1px solid #eee}
+    .slides{display:flex;transition:transform 0.5s ease}
+    .slide{min-width:100%;height:300px;display:flex;align-items:center;justify-content:center;background:#ccc;color:#fff;font-size:24px}
+    .slideshow .controls{position:absolute;top:50%;left:0;right:0;display:flex;justify-content:space-between;transform:translateY(-50%);pointer-events:none}
+    .slideshow .controls button{pointer-events:auto;background:rgba(0,0,0,0.4);color:#fff;border:none;padding:8px 12px;border-radius:4px;margin:8px}
+
+    /* Comments & posts */
+    .card{border:1px solid #eee;padding:12px;border-radius:8px;background:#fff;margin:12px 0}
+    .comment-list,.posts-list{list-style:none;padding-left:0;max-height:200px;overflow:auto}
+    .comment-item,.post-item{padding:8px;border-bottom:1px solid #f0f0f0}
+    .row{display:flex;gap:16px}
+    .col{flex:1}
+    textarea,input{width:100%;padding:8px;border:1px solid #ddd;border-radius:6px}
+    .btn{padding:8px 12px;border-radius:6px;border:none;background:#15aabf;color:#fff;cursor:pointer}
+
+    </style>
+</head>
+<body>
+    <!-- Menu icon -->
+    <div class="menu-icon">
+        <i class='bx bx-menu open-menu-icon'></i>
+    </div>
+
+    <div class="left-menu ">
+        <i class='bx bx-x disable-menu'></i>
+         <ul>
+            <li>FEATURES</li>
+            <li>ABOUT</li>
+            <li>PRODUCTS</li>
+            <li>SERVICES</li>
+            <li>CONTACTS</li>
+        </ul>
+    </div>
+
+    <!-- Top menu -->
+    <nav>
+        <ul>
+            <li>FEATURES</li>
+            <li>ABOUT</li>
+            <li>PRODUCTS</li>
+            <li>SERVICES</li>
+            <li>CONTACTS</li>
+        </ul>
+    </nav>
+    <!-- main header -->
+    <div class="main-header">
+        <div class="main-contents">
+            <p>Over hunrred flavors of tea</p>
+            <h2>SPECIALLY CRAFTED TEA</h2>
+            <button>Explore</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="social-bar">
+            <button id="likeBtn" class="like-btn">Like (<span id="likeCount">0</span>)</button>
+            <button id="shareBtn" class="share-btn">Share</button>
+            <button id="openComments" class="share-btn">Comments</button>
+            <button id="openPosts" class="share-btn">New Post</button>
+        </div>
+
+        <div class="card">
+            <h3>Slideshow</h3>
+            <div class="slideshow" id="slideshow">
+                <div class="slides" id="slides">
+                    <div class="slide">Slide 1</div>
+                    <div class="slide">Slide 2</div>
+                    <div class="slide">Slide 3</div>
+                </div>
+                <div class="controls">
+                    <button id="prev">◀</button>
+                    <button id="next">▶</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Video</h3>
+            <div style="position:relative;padding-top:56.25%;">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+            </div>
+        </div>
+
+        <div id="commentsCard" class="card" style="display:none">
+            <h3>Comments</h3>
+            <div>
+                <textarea id="commentText" rows="3" placeholder="Write a comment..."></textarea>
+                <div style="margin-top:8px"><button id="postComment" class="btn">Post Comment</button></div>
+            </div>
+            <ul id="commentList" class="comment-list"></ul>
+        </div>
+
+        <div id="postsCard" class="card" style="display:none">
+            <h3>New Post</h3>
+            <input id="postTitle" placeholder="Title" />
+            <textarea id="postBody" rows="4" placeholder="Say something..."></textarea>
+            <div style="margin-top:8px"><button id="publishPost" class="btn">Publish</button></div>
+            <h4 style="margin-top:12px">Posts</h4>
+            <ul id="postsList" class="posts-list"></ul>
+        </div>
+    </div>
+
+    <script>
+
+        var disableIcon = document.querySelector('.disable-menu');
+        var leftMenu = document.querySelector('.left-menu');
+        var openMenuIcon = document.querySelector(".open-menu-icon")
+
+        disableIcon.addEventListener("click",function(){
+            console.log("ok");
+            leftMenu.style.display = "none";
+        })
+
+        openMenuIcon.addEventListener("click",function(){
+            leftMenu.style.display = "block";
+        })
+
+
+    </script>
+
+    <script>
+    // Likes, share, comments, posts, slideshow (client-side only)
+    (function(){
+        const likeBtn = document.getElementById('likeBtn');
+        const likeCountEl = document.getElementById('likeCount');
+        const shareBtn = document.getElementById('shareBtn');
+        const openComments = document.getElementById('openComments');
+        const openPosts = document.getElementById('openPosts');
+        const commentsCard = document.getElementById('commentsCard');
+        const postsCard = document.getElementById('postsCard');
+
+        let likes = parseInt(localStorage.getItem('site_likes')||'0',10);
+        likeCountEl.textContent = likes;
+        likeBtn.addEventListener('click',()=>{
+            likes++;
+            localStorage.setItem('site_likes',likes);
+            likeCountEl.textContent = likes;
+            likeBtn.classList.add('active');
+        });
+
+        shareBtn.addEventListener('click',async ()=>{
+            const url = location.href;
+            if(navigator.share){
+                try{ await navigator.share({title:document.title,url}); }catch(e){}
+            }else{
+                try{ await navigator.clipboard.writeText(url); alert('Link copied to clipboard'); }catch(e){ prompt('Copy link',url); }
+            }
+        });
+
+        // Comments
+        const commentList = document.getElementById('commentList');
+        const commentText = document.getElementById('commentText');
+        const postComment = document.getElementById('postComment');
+
+        function renderComments(){
+            const comments = JSON.parse(localStorage.getItem('site_comments')||'[]');
+            commentList.innerHTML = '';
+            comments.slice().reverse().forEach(c=>{
+                const li = document.createElement('li'); li.className='comment-item'; li.textContent = c; commentList.appendChild(li);
+            });
+        }
+        postComment.addEventListener('click',()=>{
+            const v = commentText.value.trim(); if(!v) return; const arr = JSON.parse(localStorage.getItem('site_comments')||'[]'); arr.push(v); localStorage.setItem('site_comments',JSON.stringify(arr)); commentText.value=''; renderComments();
+        });
+        renderComments();
+
+        // Posts
+        const postsList = document.getElementById('postsList');
+        const postTitle = document.getElementById('postTitle');
+        const postBody = document.getElementById('postBody');
+        const publishPost = document.getElementById('publishPost');
+
+        function renderPosts(){
+            const posts = JSON.parse(localStorage.getItem('site_posts')||'[]');
+            postsList.innerHTML=''; posts.slice().reverse().forEach(p=>{ const li=document.createElement('li'); li.className='post-item'; li.innerHTML = '<strong>'+escapeHtml(p.title)+'</strong><div>'+escapeHtml(p.body)+'</div>'; postsList.appendChild(li); });
+        }
+        publishPost.addEventListener('click',()=>{
+            const title = postTitle.value.trim(); const body = postBody.value.trim(); if(!title && !body) return; const arr = JSON.parse(localStorage.getItem('site_posts')||'[]'); arr.push({title,body}); localStorage.setItem('site_posts',JSON.stringify(arr)); postTitle.value=''; postBody.value=''; renderPosts();
+        });
+        renderPosts();
+
+        openComments.addEventListener('click',()=>{ commentsCard.style.display = commentsCard.style.display==='none'?'block':'none'; postsCard.style.display='none'; });
+        openPosts.addEventListener('click',()=>{ postsCard.style.display = postsCard.style.display==='none'?'block':'none'; commentsCard.style.display='none'; });
+
+        // Slideshow
+        const slidesEl = document.getElementById('slides'); const nextBtn = document.getElementById('next'); const prevBtn = document.getElementById('prev');
+        let idx = 0; const total = slidesEl.children.length;
+        function show(i){ idx = (i+total)%total; slidesEl.style.transform = 'translateX('+(-idx*100)+'%)'; }
+        nextBtn.addEventListener('click',()=>show(idx+1)); prevBtn.addEventListener('click',()=>show(idx-1));
+        let slideAuto = setInterval(()=>show(idx+1),4000);
+        document.getElementById('slideshow').addEventListener('mouseover',()=>clearInterval(slideAuto));
+        document.getElementById('slideshow').addEventListener('mouseleave',()=>{ slideAuto = setInterval(()=>show(idx+1),4000); });
+
+        function escapeHtml(s){ return String(s).replace(/[&<>\"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+    })();
+    </script>
+
+</body>
+</html>

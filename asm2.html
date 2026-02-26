@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="data:image/jpeg;base64,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" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Momo+Signature&fam…00..800&family=Playwrite+NZ+Basic:wght@100..400&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        *{
+            
+            padding: 0;
+            box-sizing: border-box;
+           
+        }
+        body{
+            position: relative;
+            background-color: rgb(234, 236, 238);
+       
+        }
+        nav{
+            /* border: 2px rgb(6, 141, 17) solid; */
+            text-align: center;
+            width: 100%;
+        }
+        nav ul li{
+            display: inline-block;
+            margin: 0;
+            padding: 10px;
+            font-size: 25px; 
+            transition: 0.3s; 
+        }
+        nav ul li:hover{
+            font-weight: bold;
+            background:rgb(74, 235, 74) ;
+        }
+
+        
+        .menu-icon{
+            border: 2px solid black;
+            background: white;
+            font-size: 30px;
+            position: fixed;
+            border-radius: 7px;
+            
+        }
+        .left-menu {
+            border: 2px solid black;
+            width: 400px;
+            height: 500px;
+            background: rgb(224, 215, 215);
+            position: fixed;
+            display: none;
+            
+        }
+        .left-menu ul{
+            list-style: none;
+        }
+
+        .left-menu i{
+            font-size: 30px;
+            color: red;
+        }
+        .left-menu li{
+            padding: 10px;
+            font-weight: bold;
+            transition: 0.4s;
+        }
+        .left-menu li:hover{
+           transform: translateX(20px);
+           color: green;
+        }
+        
+    .main-header{
+            /* border: 2px solid black; */
+            width: 100%;
+            height: 700px;
+            text-align: center;
+            padding-top: 10%;
+            /* làm chìm ảnh */
+            background: linear-gradient(to bottom,rgb(0,0,0,0.9),rgb(0,0,0,0.2)),url(https://www.traviet.com/wp-content/uploads/2021/12/tra-den-1200x800.webp) center/cover;;
+        }
+
+        
+
+
+        .main-contents{
+            /* border: 2px rgb(226, 93, 93) solid; */
+            color: white;
+            
+        }
+        .main-contents p{
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Momo Signature', cursive;
+
+            animation: slideInRight 2s ease-out;
+        }
+        .main-contents h1{
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: -20px;
+            margin-bottom: 30px;
+
+            animation: slideInLeft 2s ease-out;
+        }
+        .main-contents button{
+            width: 200px;
+            height: 50px; 
+            background: linear-gradient(to left, rgb(0, 187, 90), rgb(90, 90, 216));
+            color:aliceblue;
+            font-weight: bold;
+            border-radius: 90px;
+            border: none;
+            margin: 7px;
+            transition: 0.3s;
+            font-size: 18px;
+
+            cursor: pointer;
+
+            animation: show 1.5s 1s ease-out;
+            animation-fill-mode: backwards;
+            transition: 0.3s;
+        }
+        .main-contents button:hover{
+            width:120px;
+            transform: scale(1.05);
+        }
+
+        /* ===== KEYFRAMES ===== */
+       @keyframes slideInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            60% {
+                opacity: 0.7;
+                transform: translateX(20%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            60% {
+                opacity: 0.7;
+                transform: translateX(-20%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes show {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ferarures */
+        .features{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .features div{
+            border: 1.4px solid rgb(47, 180, 87);
+            padding: 20px;
+            font-size: 25px;
+            text-align: center;
+            transition: 0.4s;
+        }
+        .features div:hover{
+          background-color: rgb(41, 240, 41);
+        }
+        .features h3{
+            color: green;
+            letter-spacing: 3px;
+            margin-top: 20px;
+        }
+        .title{
+            margin-top: 30px;
+            text-align: center;
+            margin-bottom: 10px;
+            color: green;
+            font-size: 30px;
+        }
+        .about{
+           
+            grid-template-columns: 1fr 1fr;
+            display: grid;
+        }
+        
+        .about div:first-child{
+            padding: 5px;
+            background-color: green;
+            border-radius: 10px;
+            overflow: hidden;
+
+        }
+        .about div:last-child{
+            padding: 30px;
+        }
+        .about p{
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        .about button{
+            width: 100px;
+            height: 30px; 
+            background: linear-gradient(to left, rgb(0, 187, 90), rgb(90, 90, 216));
+            color:aliceblue;
+            font-weight: bold;
+            border-radius: 90px;
+            border: none;
+            margin: 7px;
+            transition: 0.4s;
+        }
+        .about button:hover{
+            background: linear-gradient(to left, rgb(90, 90, 216), rgb(0, 187, 90));
+            width: 120px;
+        }
+        .about img{
+width: 100%;
+            border-radius: 10px ;
+            transition: 0,3s;
+            
+        }
+        .about img:hover{
+            transform: scale(1.1,1.1);
+            opacity: 0.8;
+        }
+        .product{
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr ;
+            grid-gap: 20px;
+            background-color: rgb(80, 209, 145);
+        }
+        .product div{
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .product p{
+            font-size: 25px;
+            line-height: 1.6;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .product button{
+            width: 100px;
+            height: 40px; 
+            background: linear-gradient(to left, rgb(0, 187, 90), rgb(90, 90, 216));
+            color:aliceblue;
+            font-weight: bold;
+            border-radius: 90px;
+            border: none;
+            margin: 7px;
+            transition: 0.4s;
+            font-size: 17px;
+        }
+        .product button:hover{
+            background: linear-gradient(to left, rgb(90, 90, 216), rgb(0, 187, 90));
+            width: 110px;
+        }
+        .product img{
+            width: 100%;
+            border-radius: 10px ;
+        }
+
+        .services{
+            border: 2px red;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr ;
+            grid-gap: 20px;
+            background-color: rgb(26, 228, 86);
+           
+        }
+        .services div{
+            border: 2px blue solid;
+            /* overflow: hidden; ẩn phân thừa */
+            overflow: hidden; 
+            text-align: center;
+            margin: 10px;
+            border-radius: 25px;
+            border: 5px blue solid;
+             background-color: rgb(99, 236, 225);
+            color: rgb(20, 24, 21);
+        }
+        .services img{
+            width: 100%;
+        }
+        .services button{
+            margin-bottom: 20px;
+            width: 100px;
+            height: 30px; 
+            background: linear-gradient(to left, rgb(0, 187, 90), rgb(90, 90, 216));
+            color:aliceblue;
+            font-weight: bold;
+            border-radius: 90px;
+            border: none;
+            margin: 7px;
+            transition: 0.4s;
+        }
+        .services button:hover{
+            background: linear-gradient(to left, rgb(90, 90, 216), rgb(0, 187, 90));
+            width: 120px;
+        }
+        /* contact */
+        .contact{
+            /* border: 4px red solid; */
+            padding:20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            
+        }
+        .contact div{
+            /* border: 4px blue solid; */
+            margin: 10px;
+        }
+        .contact div:first-child{
+            padding: 10px;
+            font-size: 25px;
+            color: green;
+            
+        }
+        .contact div:first-child h3{
+margin-top: 20px;
+            margin-bottom: 20px;
+            font-family: 'Momo Signature', cursive;
+        }
+        .contact div:nth-child(2){
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(250, 251, 252);
+            padding: 20px;         
+        }
+        .contact div:nth-child(2) h1{
+            font-family: 'Momo Signature', cursive;
+            text-align: center;
+        }
+        .contact input{
+            width: 100%;
+            height: 40px;
+            background: rgb(211, 209, 209);
+            padding-left: 10px;
+            padding-right: 10px;
+            border: none;
+        } 
+         .contact textarea{
+            width: 100%;
+            height: 100px;
+            background: rgb(211, 209, 209);
+            padding-left: 10px;
+            padding-right: 10px;
+            border: none;
+            margin-top: 10px;
+         }          
+        
+    </style>
+</head>
+<body>
+    <div class="menu-icon">
+ <i class='bx bx-menu open-menu-icon'>
+
+ </i>
+    </div>
+    <div class="left-menu" style="display:none;" >
+    <i class='bx bx-x disable-menu'></i>
+    
+        <ul>
+        <li><a href="#feature">FEATURE</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#products">PRODUCTS</a></li>
+        <li><a href="#service">SERVICE</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+    
+    </div>
+    
+<nav>
+    <ul>
+        <li>FEATURE</li>
+        <li>ABOUT</li>
+        <li>PRODUCTS</li>
+        <li>SERVICE</li>
+        <li>CONTACT</li>
+    </ul>
+</nav>
+    <div class="main-header">
+        <div class="main-contents">
+            <p>Over hundred flavors of tea</p>
+            <h1>SPECIALLY CRAFTED TEA</h1>
+            <button>Explore </button>
+        </div>
+    </div>
+    <section id="feature">
+    <h3 class="title">FEATURES</h3>
+    <div class="features">
+        <div>
+            <h3>Title is here</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget ultricies nunc nisl eget nisl.</p>
+        </div>
+        <div>
+            <h3>Title is here</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget ultricies nunc nisl eget nisl.</p>
+        </div>
+        <div>
+            <h3>Title is here</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget ultricies nunc nisl eget nisl.</p>
+        </div>
+        <div>
+            <h3>Title is here</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget ultricies nunc nisl eget nisl.</p>
+        </div>
+    </div>
+    </section>
+
+    <h3 class="title">ABOUT</h3>
+    <section id="about">
+    <div class="about">
+        <div>
+<img src="https://sasaki.com.vn/wp-content/uploads/2023/10/tra-thao-moc-01.jpg" alt="">
+        </div>
+        <div>
+            <h2>About our</h2>
+            <h2>Title is here</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget ultricies nunc nisl eget nisl.</p>
+            <button>Read more</button>
+        </div>
+    </div>
+    </section>
+
+    <!-- products? -->
+     <section id="products">
+     <h3 class="title">PRODUCTS</h3>
+     <div class="product">
+        <div>
+            <h1>CHECK UOT</h1>
+            <H1>OUR PRODUCTS</H1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget ultricies nunc nisl eget nisl.</p>
+            <button>Check out</button>
+        </div>
+        <div>
+            <img width="100px" src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2023/2/1/uong-tra-thao-duoc-tu-nhien-58ee61f1a18b147088c9f8e0c065cfd55grande1-16752448395582005498834.jpg" alt="">
+            <h4>TEA</h4>
+            <h5>$19.000</h5>
+        </div>
+        <div>
+            <img width="100px" height="340px" src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2025/9/14/11a250d25a8854d07867644995534a34egrande-1757840905962298723980.jpg" alt="">
+            <h4>TEA</h4>
+            <h5>$15.000</h5>
+        </div>    
+     </div>
+        </section>
+     <!-- dich vu -->
+      <section id="service">
+      <h3 class="title">SERVICES</h3>
+     <div class="services">
+        <div>
+            <img width="150px" src="https://www.vinmec.com/static/uploads/small_20211217_154910_585637_cong_dung_tra_hoa_c_max_1800x1800_jpg_464ac51b24.jpg" alt="">
+                <h3>DEVITAN</h3>
+                <button>READ MORE</button>
+        </div>
+        <div>
+            <img width="150px" src="https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/2023_10_30_638343005437061544_ava.jpg" alt="">
+                <h3>DEVITAN</h3>
+                <button>READ MORE</button>
+        </div>
+        <div>
+            <img width="150px" src="https://vcdn1-giadinh.vnecdn.net/2013/08/06/tra-hoa-cuc-1375761020.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=l4Htuj7Gyj-wrJ3r4wqzjw" alt="">
+                <h3>DEVITAN</h3>
+                <button>READ MORE</button>
+        </div>
+     </div>
+        </section>
+
+        <!-- contact -->
+<section id="contact">
+     <h3 class="title">CONTACT</h3>
+     <div class="contact">
+            <div class="contact-info">
+            <h3>Adress</h3>
+            <p>FPT Polytechnic Thanh Hoa</p>
+
+            <h3>Email</h3>
+            <p>Sang@gmail.com</p>
+
+            <h3>Telephone</h3>
+            <p>0123456789</p>
+        </div>
+
+        <div class="map-wrapper" style="width:100%;height:280px;margin:10px;">
+            <iframe class="map-iframe" src="https://www.google.com/maps?q=FPT+Polytechnic+Thanh+Hoa&output=embed" style="border:0;width:100%;height:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    
+            <div class="contact-form">
+                <h1>CONTACT US</h1>
+            <form action="">
+                <input type="text" placeholder="NAME">
+                <br>
+                <br>
+                <br>
+                
+                <input type="email" placeholder="EMAIL">
+                <br>
+                <br>
+                <br>
+                
+                <textarea placeholder="MESSAGE" name="" id=""></textarea>
+            </form>
+        </div>
+     </div>
+        </section>
+ 
+    <!-- <div class="aboutFame">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ_k…E7N1PbB0JMrThH-1Ipv2UOIuE_v9SKLXPC_3vhRVvEoCHM9r4yc&usqp=CAc" alt="">
+    </div> -->
+    <script>
+        var disableIcon = document.querySelector('.disable-menu');
+        var leftMenu = document.querySelector('.left-menu');
+        var openMenuIcon = document.querySelector(".open-menu-icon")
+
+        disableIcon.addEventListener("click",function(){
+            console.log("ok");
+            leftMenu.style.display = "none";
+        })
+
+        openMenuIcon.addEventListener("click",function(){
+            leftMenu.style.display = "block";
+        })
+
+
+    </script>
+</body>
+</html>
